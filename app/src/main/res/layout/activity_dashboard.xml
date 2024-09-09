@@ -1,0 +1,592 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8f1f2"
+    android:padding="16dp">
+
+
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/dashboardTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Dashboard"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- HorizontalScrollView for the first table -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/horizontalScrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashboardTitle"
+        app:layout_constraintVertical_bias="0.066">
+
+        <!-- TableLayout for the first set of details -->
+        <TableLayout
+            android:id="@+id/detailsTable1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:stretchColumns="1">
+
+            <!-- Table Row for headers -->
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e0f7fa">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Business Name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GSTIN"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GST Username"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GST Password"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client's Name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client Email"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client Mob.no"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Filing Price"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Action"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <!-- Table Row for filled details -->
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/businessNameValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstinValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstUsernameValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstPasswordValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientNameValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientEmailValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientMobileValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/filingPriceValue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <Spinner
+                    android:id="@+id/actionSpinner1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_editext"
+                    android:entries="@array/action_array" />
+            </TableRow>
+
+        </TableLayout>
+    </HorizontalScrollView>
+
+    <!-- HorizontalScrollView for the second table -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/horizontalScrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView1">
+
+        <!-- TableLayout for the second set of details -->
+        <TableLayout
+            android:id="@+id/detailsTable2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:stretchColumns="1">
+
+            <!-- Table Row for headers -->
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e0f7fa">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Business Name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GSTIN"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GST Username"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight = "1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GST Password"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client's Name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client Email"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client Mob.no"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Filing Price"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Action"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <!-- Table Row for filled details -->
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/businessNameValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstinValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstUsernameValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstPasswordValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientNameValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientEmailValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientMobileValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/filingPriceValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <Spinner
+                    android:id="@+id/actionSpinner2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_editext"
+                    android:entries="@array/action_array" />
+            </TableRow>
+
+        </TableLayout>
+    </HorizontalScrollView>
+
+    <!-- HorizontalScrollView for the third table -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView2">
+
+        <!-- TableLayout for the third set of details -->
+        <TableLayout
+            android:id="@+id/detailsTable3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:stretchColumns="1">
+
+            <!-- Table Row for headers -->
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e0f7fa">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Business Name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GSTIN"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GST Username"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="GST Password"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client's Name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client Email"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Client Mob.no"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Filing Price"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#b2ebf2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Action"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <!-- Table Row for filled details -->
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/businessNameValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstinValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstUsernameValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/gstPasswordValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientNameValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientEmailValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/clientMobileValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <TextView
+                    android:id="@+id/filingPriceValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="--" />
+
+                <Spinner
+                    android:id="@+id/actionSpinner3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_editext"
+                    android:entries="@array/action_array" />
+            </TableRow>
+
+        </TableLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

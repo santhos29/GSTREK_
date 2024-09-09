@@ -1,0 +1,165 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d8f3dc"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/formLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:weightSum="6">
+
+            <!-- Layout for TextView and Proceed Button -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <!-- Add GSTIN Text View -->
+                <TextView
+                    android:id="@+id/gstinLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add all your GSTIN"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <!-- Proceed Button -->
+                <Button
+                    android:id="@+id/proceedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proceed"
+                    android:background="@drawable/rounded_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Row 1 - Business Name -->
+            <EditText
+                android:id="@+id/businessName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Business Name"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_editext" />
+
+            <!-- Row 2 - GSTIN -->
+            <EditText
+                android:id="@+id/gstin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="GSTIN"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_editext" />
+
+            <!-- Row 3 - GST Username -->
+            <EditText
+                android:id="@+id/gstUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="GST Username"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_editext" />
+
+            <!-- Row 4 - GST Password -->
+            <EditText
+                android:id="@+id/gstPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="GST Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_editext" />
+
+            <!-- Row 5 - Client's Name -->
+            <EditText
+                android:id="@+id/clientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Client's Name"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_editext" />
+
+            <!-- Row 6 - Client Email -->
+            <EditText
+                android:id="@+id/clientEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Client Email"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_editext" />
+
+            <!-- Row 7 - Client Mob.no -->
+            <EditText
+                android:id="@+id/clientMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Client Mob.no"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_editext" />
+
+            <!-- Row 8 - Filing Price -->
+            <EditText
+                android:id="@+id/filingPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Filing Profile"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_editext" />
+
+            <!-- Row 9 - Label and Action (Dropdown for Delete) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Action"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <Spinner
+                android:id="@+id/actionSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/action_array"
+                android:padding="16dp"
+                android:background="@drawable/rounded_editext" />
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

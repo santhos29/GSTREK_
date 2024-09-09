@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#b7e4c7"
+    tools:context=".CalculatorActivity">
+
+    <!-- LinearLayout to hold the UI elements -->
+    <LinearLayout
+        android:layout_above="@+id/bottomLayout"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_centerInParent="true">
+
+        <!-- Logo ImageView -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gst"/>
+
+        <!-- Input for Original Price -->
+        <TextView
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="GST Calculator"
+            android:textSize="22dp"
+            android:textColor="#2d6a4f" />
+
+        <EditText
+            android:id="@+id/etOriginalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Original Price"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+
+        <!-- Input for GST Rate -->
+        <EditText
+            android:id="@+id/etGSTRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter GST Rate (%)"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+
+        <!-- Button to Calculate GST -->
+        <Button
+            android:id="@+id/btnCalculateGST"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate GST"
+            android:padding="12dp"
+            android:background="#2d6a4f"
+            android:textColor="#FFFFFF" />
+
+        <!-- TextView to display the GST amount -->
+        <TextView
+            android:id="@+id/tvGSTAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GST Amount: "
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:textColor="@android:color/black" />
+
+        <!-- TextView to display the Final Price after GST -->
+        <TextView
+            android:id="@+id/tvFinalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Final Price: "
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include
+            layout="@layout/activity_nav_bar" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:showIn="navigation_view">
+
+  <group android:checkableBehavior="single"
+      >
+
+
+   <item
+    android:id="@+id/navHome"
+    android:icon="@drawable/home_icon"
+    android:title="@string/title_home"
+    android:checked="true"/>
+   <item
+       android:id="@+id/navDashboard"
+       android:icon="@drawable/dashboard_icon"
+       android:title="@string/title_dashboard"/>
+   <item
+       android:id="@+id/navBank"
+       android:icon="@drawable/bank_icon"
+       android:title="@string/title_bank"/>
+   <item
+       android:id="@+id/navSignIn"
+       android:icon="@drawable/home_icon"
+       android:title="@string/title_sign_In"/>
+   <item
+       android:id="@+id/navHistory"
+       android:icon="@drawable/home_icon"
+       android:title="@string/title_history"/>
+   <item
+       android:id="@+id/navProfile"
+       android:icon="@drawable/home_icon"
+       android:title="@string/title_profile"/>
+   <item
+       android:id="@+id/navGst"
+       android:icon="@drawable/home_icon"
+       android:title="File GST Returns"/>
+   <item
+       android:id="@+id/navPaymentDash"
+       android:icon="@drawable/home_icon"
+       android:title="Payment Dashboard"/>
+   <item
+       android:id="@+id/navReports"
+       android:icon="@drawable/home_icon"
+       android:title="Reports"/>
+   <item
+       android:id="@+id/navContact"
+       android:icon="@drawable/home_icon"
+       android:title="@string/title_contact"/>
+   <item
+       android:id="@+id/navAbout"
+       android:icon="@drawable/home_icon"
+       android:title="@string/title_about"/>
+   <item
+       android:id="@+id/navLogout"
+       android:icon="@drawable/logout_icon"
+       android:title="@string/title_logout"/>
+
+
+  </group>
+
+
+
+</menu>
