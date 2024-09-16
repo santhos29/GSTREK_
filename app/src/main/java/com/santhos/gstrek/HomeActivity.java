@@ -15,6 +15,7 @@ import android.widget.Toast;
 import android.content.Intent;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class HomeActivity extends AppCompatActivity {
     NavigationView navigationView;
 
     CardView calculatorCard;
+    public ImageView logout;
 
     CardView logoutCard;
     @Override
@@ -46,6 +48,18 @@ public class HomeActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         ImageView userImage = headerView.findViewById(R.id.userImage);
         TextView texUsername = headerView.findViewById(R.id.textUsername);
+
+        logout = (ImageView) findViewById(R.id.cardImage4);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         userImage.setOnClickListener(new View.OnClickListener() {
