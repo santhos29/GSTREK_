@@ -8,13 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.editTextEmail);
         passwordEditText = findViewById(R.id.editTextPassword);
         loginButton = findViewById(R.id.loginbutton);
+
+        //connection to firebase
+        mAuth = FirebaseAuth.getInstance();
 
         // Set up button click listener
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -60,26 +72,30 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // Check password strength
-        checkPasswordStrength(password);
-    }
 
-    private void checkPasswordStrength(String password) {
-        String strength;
-        if (password.length() >= 8 && password.matches(".*[A-Z].*") && password.matches(".*[a-z].*") && password.matches(".*[0-9].*")) {
-            strength = "Strong";
-        } else if (password.length() >= 8 && (password.matches(".*[A-Z].*") || password.matches(".*[a-z].*")) && password.matches(".*[0-9].*")) {
-            strength = "Medium";
-        } else {
-            strength = "Weak";
+            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        if (user.isEmailVerified()) {
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                            finish();
+                        } else {
+                            user.sendEmailVerification();
+                            Toast.makeText(LoginActivity.this, "Please verify your email, If there is no Email then check your spam folder", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }else{
+                        Toast.makeText(LoginActivity.this,"Failed to Login", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
         }
 
-        // Show password strength Toast
-        Toast.makeText(LoginActivity.this, "Password strength: " + strength, Toast.LENGTH_SHORT).show();
-        if (strength.equals("Strong")) {
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
+
+
+
 }

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "230895009723",
+    "firebase_url": "https://gstrek-9df8e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "gstrek-9df8e",
+    "storage_bucket": "gstrek-9df8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230895009723:android:47d5ec892e8cf2ed9f0e9e",
+        "android_client_info": {
+          "package_name": "com.santhos.gstrek"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAURRVpgDM8nUNDmNp6mWZsWlqSEZEf-ks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
