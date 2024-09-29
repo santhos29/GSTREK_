@@ -34,6 +34,12 @@ android {
             force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
         }
     }
+
+
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 dependencies {

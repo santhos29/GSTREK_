@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (mAuth.getCurrentUser() == null) {
-            Log.d("test","ewew");
             startActivity(new Intent(this, com.santhos.gstrek.LoginActivity.class));
             finish();
         }else{

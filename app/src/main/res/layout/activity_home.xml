@@ -9,12 +9,43 @@
     android:fitsSystemWindows="true"
     tools:context=".HomeActivity">
 
-    <include
-        layout="@layout/activity_main_content"/>
 
-    <include
-        layout="@layout/home_dashboard"/>
-    
+    <FrameLayout
+        android:id="@+id/frameview"
+        android:layout_width="match_parent"
+        android:layout_height="653dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="78dp">
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <RelativeLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/bottom_menu"
+                app:labelVisibilityMode="labeled"
+                android:background="?android:attr/windowBackground"
+                app:itemIconTint="#52b788" />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
@@ -23,6 +54,7 @@
         app:itemIconPadding="45dp"
         app:headerLayout="@layout/drawer_header_activity"
         android:layout_gravity="start"/>
+
 
 
 
