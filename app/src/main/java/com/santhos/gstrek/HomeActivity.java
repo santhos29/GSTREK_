@@ -79,7 +79,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             } else if (name == R.id.dashboardNav) {
-                replacefragment(new NewsFragment());
+               //replacefragment(new DisplayFragment());
+                Intent intent = new Intent(HomeActivity.this, DisplayActivity.class);
+                startActivity(intent);
 
             } else if (name == R.id.homeNav) {
                 replacefragment(new HomeFragment());

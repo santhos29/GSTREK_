@@ -22,7 +22,6 @@ public class SplashScreenActivity extends AppCompatActivity {
                 // Start MainActivity
                 Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(intent);
-                Log.d("test","teres");
                 finish(); // Finish SplashActivity so it is not in the back stack
             }
         }, SPLASH_DURATION);

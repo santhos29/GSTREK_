@@ -8,6 +8,7 @@ android {
     namespace 'com.santhos.gstrek'
     compileSdk 34
 
+
     defaultConfig {
         applicationId "com.santhos.gstrek"
         minSdk 29
@@ -16,6 +17,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
     }
 
     buildTypes {
@@ -53,6 +59,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
     implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
     implementation 'com.google.android.material:material:1.6.1'
+
+    implementation 'com.google.cloud:google-cloud-vision:3.49.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.9.3'
+    implementation 'com.google.firebase:firebase-database:20.0.3'
+
+
+
+
 
     // Add other dependencies as needed
 }
